@@ -10,17 +10,19 @@ window.onscroll = function() {
     let value = scrollY
     javaScript.style.transform = `translateY(${(value/1.2) - 180}px)`
     moon.style.transform = `translateY(${value*2.5}px)`
-    javaScript.style.fontSize = `${value / 2}px`
+    javaScript.style.fontSize = `${value / 2.5}px`
     if (value > 170) {
         moon.style.display = "none"
-        javaScript.style.fontSize = "85px"
+        javaScript.style.fontSize = "68px"
         document.querySelector(".imgs-cont").style.background = `linear-gradient(#6094da, transparent)`
+        document.querySelector("header").style.display = "none"
     } else {
+        document.querySelector("header").style.display = "flex"
         moon.style.display = "block"
         document.querySelector(".imgs-cont").style.background = `linear-gradient(#200016, #10001f)`
     }
 
-    if (value < 310) {
+    if (value < 550) {
         
         javaScript.style.display = "block"
     }
