@@ -5,6 +5,13 @@ let mountain3 = document.querySelector(".mountain3")
 let mountain4 = document.querySelector(".mountain4")
 let boat = document.querySelector(".boat")
 let river = document.querySelector(".river")
+let upArrow = document.createElement("span")
+upArrow.className = "up-arrow" 
+upArrow.style.display = "none"
+upArrow.innerHTML = "UP"
+document.body.appendChild(upArrow)
+
+
 
 window.onscroll = function() {
     let value = scrollY
@@ -45,4 +52,15 @@ window.onscroll = function() {
         javaScript.style.display = "none" 
         }    
     }
+
+    if (value > 340) {
+        upArrow.style.display = "flex"
+    } else {
+        upArrow.style.display = "none"
+    }
+}
+
+upArrow.onclick = function upArrow() 
+{
+    scrollTo(top)
 }
